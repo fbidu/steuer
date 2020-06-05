@@ -3,10 +3,13 @@
 ---
 
 <p align="center"> Burocracia é chato, automações duvidosas são legais 😄
+
     <br>
+
 </p>
 
 ## Sobre <a name = "about"></a>
+
 Steuer é um quase-bot em Selenium que emite notas no site da prefeitura de São Paulo
 por você.
 
@@ -36,4 +39,15 @@ tem informações pra linux. A [página oficial](https://github.com/mozilla/geck
 
 Steuer é uma ferramenta de linha de comando. Você pode customizar o comportamento
 dela por flags ou preenchendo o arquivo `exemplo.env` com seus dados e salvando-o
-como `secret.env`. Tudo o que você colocar lá será usado como valor padrão.
+como `secret.env` . Tudo o que você colocar lá será usado como valor padrão.
+
+Um exemplo de uso é:
+
+```
+python steuer --cnpj=xx.xxx.xxx/xxxx-xx --target=acme --description=compra de bot --value=100,00
+```
+
+Vai preencher uma nota para "acme" com a descrição "compra de bot" no valor de "100, 00".
+
+O nome do target ― no caso "acme" ― deve estar cadastrado como "apelido de tomador de serviço"
+no sistema
