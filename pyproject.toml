@@ -7,7 +7,8 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-
+selenium = "^3.141"
+python-dotenv = {version = "^0.13.0"}
 [tool.poetry.dev-dependencies]
 pytest = {version = "^5.3"}
 pre-commit = {version = "^2.0"}

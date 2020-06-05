@@ -144,3 +144,5 @@ analyzer/data/*
 !analyzer/data/.gitkeep
 analyzer/.snakemake
 # End of https://www.gitignore.io/api/python,visualstudiocode
+selenium_project
+secret.env
