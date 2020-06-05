@@ -1,0 +1,39 @@
+<h1 align="center">Steuer</h1>
+
+---
+
+<p align="center"> Burocracia é chato, automações duvidosas são legais 😄
+    <br>
+</p>
+
+## Sobre <a name = "about"></a>
+Steuer é um quase-bot em Selenium que emite notas no site da prefeitura de São Paulo
+por você.
+
+> "_Quase_ bot?"
+
+Sim! Você vai precisar digitar o captcha na tela do login e o bot não vai clicar
+em 'emitir' de fato, por segurança, para que você possa verificar os dados
+
+## Pré-requisitos
+
+Para rodar, você precisa do Python, Poetry e [Geckodriver](https://medium.com/beelabsolutions/baixando-e-configurando-o-geckodriver-no-ubuntu-dc2fe14d91c) instalados.
+
+```
+pip install poetry
+```
+
+é suficiente para instalar o poetry. O gecko é mais chatinho mas o link na referência
+tem informações pra linux. A [página oficial](https://github.com/mozilla/geckodriver) também tem mais informações
+
+## Instalando
+
+1. Clone esse repositório
+2. `poetry install`
+3. :fireworks:
+
+## 🎈 Uso
+
+Steuer é uma ferramenta de linha de comando. Você pode customizar o comportamento
+dela por flags ou preenchendo o arquivo `exemplo.env` com seus dados e salvando-o
+como `secret.env`. Tudo o que você colocar lá será usado como valor padrão.
