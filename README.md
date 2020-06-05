@@ -43,7 +43,7 @@ Um exemplo de uso é:
 python steuer --cnpj=xx.xxx.xxx/xxxx-xx --target=acme --description=compra de bot --value=100,00
 ```
 
-Vai preencher uma nota para "acme" com a descrição "compra de bot" no valor de "100, 00".
+Vai preencher uma nota para "acme" com a descrição "compra de bot" no valor de "100,00".
 
 O nome do target ― no caso "acme" ― deve estar cadastrado como "apelido de tomador de serviço"
 no sistema
