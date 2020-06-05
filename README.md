@@ -2,11 +2,7 @@
 
 ---
 
-<p align="center"> Burocracia é chato, automações duvidosas são legais 😄
-
-    <br>
-
-</p>
+<p align="center"> Burocracia é chato, automações duvidosas são legais 😄</p>
 
 ## Sobre <a name = "about"></a>
 
