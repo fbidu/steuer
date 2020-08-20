@@ -2,6 +2,8 @@
 Steuer is a Selenium bot that fills invoices
 for incorporated workers in São Paulo
 """
+from time import sleep
+
 from selenium.webdriver import Firefox
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,6 +36,7 @@ def force_load_captcha(browser):
     """
     while not has_valid_captcha(browser):
         refresh_captcha(browser)
+        sleep(1)
 
 
 def login(cnpj, password, browser):
