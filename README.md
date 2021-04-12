@@ -40,7 +40,7 @@ como `secret.env` . Tudo o que você colocar lá será usado como valor padrão.
 Um exemplo de uso é:
 
 ```
-poetry run python steuer --cnpj=xx.xxx.xxx/xxxx-xx --target=acme --description=compra de bot --value=100,00
+poetry run python steuer --cnpj=xx.xxx.xxx/xxxx-xx --target=acme --description=compra de bot --value="100,00"
 ```
 
 Vai preencher uma nota para "acme" com a descrição "compra de bot" no valor de "100,00".
