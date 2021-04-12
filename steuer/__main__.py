@@ -4,7 +4,7 @@ for incorporated workers in São Paulo
 """
 from time import sleep
 
-from selenium.webdriver import Firefox
+from selenium import webdriver
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -37,6 +37,19 @@ def force_load_captcha(browser):
     while not has_valid_captcha(browser):
         refresh_captcha(browser)
         sleep(1)
+
+def create_browser(driver):
+    """
+    Creates the browser object using the correct driver class and options
+    """
+    if driver == "chrome":
+        from selenium.webdriver.chrome.options import Options
+        chrome_options = Options()
+        chrome_options.add_experimental_option("detach", True)
+
+        return webdriver.Chrome(options=chrome_options)
+    elif driver == "gecko":
+        return webdriver.Firefox()
 
 
 def login(cnpj, password, browser):
@@ -82,15 +95,14 @@ def fill_form(browser, value, description):
     value_field = browser.find_element_by_id("ctl00_body_tbValor")
     value_field.send_keys(value)
 
-
-def main(cnpj, password, target, value, description):
+def main(driver, cnpj, password, target, value, description):
     """
     The main function. Basically it opens a selenium driver, logs the user in,
     opens the invoice form and fills it. The last step - actually emiting the
     invoice is left as a manual step for safety - not security - reasons.
     """
 
-    browser = Firefox()
+    browser = create_browser(driver)
 
     browser.get("https://nfe.prefeitura.sp.gov.br")
 
@@ -117,6 +129,11 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cli_description)
 
+    parser.add_argument(
+        "--driver",
+        default=os.getenv("driver"),
+        help="O WebDriver Selenium a ser utilizado, 'chrome' ou 'gecko'",
+    )
     parser.add_argument(
         "--cnpj",
         default=os.getenv("cnpj"),
@@ -146,4 +163,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(args.cnpj, args.password, args.target, args.value, args.description)
+    main(args.driver, args.cnpj, args.password, args.target, args.value, args.description)
