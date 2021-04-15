@@ -16,14 +16,17 @@ em 'emitir' de fato, por segurança, para que você possa verificar os dados
 
 ## Pré-requisitos
 
-Para rodar, você precisa do Python, Poetry e [Geckodriver](https://medium.com/beelabsolutions/baixando-e-configurando-o-geckodriver-no-ubuntu-dc2fe14d91c) instalados.
+Para rodar, você precisa do Python, Poetry e um dos WebDrivers suportados instalados:
+- [Geckodriver](https://medium.com/beelabsolutions/baixando-e-configurando-o-geckodriver-no-ubuntu-dc2fe14d91c)
+- [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/getting-started)
 
 ```
 pip install poetry
 ```
 
 é suficiente para instalar o poetry. O gecko é mais chatinho mas o link na referência
-tem informações pra linux. A [página oficial](https://github.com/mozilla/geckodriver) também tem mais informações
+tem informações pra linux. A [página oficial](https://github.com/mozilla/geckodriver)
+também tem mais informações. A instalação do Chromedriver é trivial também.
 
 ## Instalando
 
@@ -40,10 +43,10 @@ como `secret.env` . Tudo o que você colocar lá será usado como valor padrão.
 Um exemplo de uso é:
 
 ```
-python steuer --cnpj=xx.xxx.xxx/xxxx-xx --target=acme --description=compra de bot --value=100,00
+poetry run python steuer --driver=gecko --cnpj=xx.xxx.xxx/xxxx-xx --target=acme --description=compra de bot --value="100,00"
 ```
 
-Vai preencher uma nota para "acme" com a descrição "compra de bot" no valor de "100,00".
+Vai preencher uma nota para "acme" com a descrição "compra de bot" no valor de "100,00" utilizando o Geckodriver (Firefox).
 
 O nome do target ― no caso "acme" ― deve estar cadastrado como "apelido de tomador de serviço"
 no sistema
