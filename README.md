@@ -26,7 +26,8 @@ pip install poetry
 
 é suficiente para instalar o poetry. O gecko é mais chatinho mas o link na referência
 tem informações pra linux. A [página oficial](https://github.com/mozilla/geckodriver)
-também tem mais informações. A instalação do Chromedriver é trivial também.
+também tem mais informações. A instalação do Chromedriver é trivial: basta garantir
+que o caminho para o binário está no `PATH`
 
 ## Instalando
 
