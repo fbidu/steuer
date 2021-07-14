@@ -61,10 +61,14 @@ def login(cnpj, password, browser):
 
     pass_field = browser.find_element_by_id("ctl00_body_tbSenha")
     cnpj_field = browser.find_element_by_id("ctl00_body_tbCpfCnpj")
+    captcha_field = browser.find_element_by_id("ctl00$body$ccCodigo")
     login_btn = browser.find_element_by_id("ctl00_body_btEntrar")
 
     cnpj_field.send_keys(cnpj)
     pass_field.send_keys(password)
+
+    # focus captcha field
+    captcha_field.send_keys("")
 
     WebDriverWait(browser, timeout=1000, poll_frequency=1).until(
         EC.staleness_of(login_btn)
